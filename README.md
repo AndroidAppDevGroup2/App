@@ -1,16 +1,15 @@
-# Milestone 1 - APP_NAME_HERE
+# Milestone 1 - Munch
 
 ## Table of Contents
 
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
-1. [Wireframes](#Wireframes)
 
 ## Overview
 
 ### Description
 
-[Description of your app]
+Munch is a mobile android application that allows users to input various ingredients in a search bar that saves and queries for recipes online that match the listed ingredients. This revolutionary 
 
 ### App Evaluation
 
