@@ -73,7 +73,8 @@ Munch is a mobile Android application that allows users to input various ingredi
 
 ## Wireframes
 
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img width="533" alt="Screenshot 2023-03-23 at 5 16 12 PM" src="https://user-images.githubusercontent.com/26809090/227365279-d9d75663-0cb1-4c4c-b593-16d58a6d8dca.png">
+
 
 ### [BONUS] Digital Wireframes & Mockups
 
