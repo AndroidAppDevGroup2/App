@@ -4,6 +4,7 @@
 
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
+1. [Wireframes](#Wireframes)
 
 ## Overview
 
@@ -47,29 +48,53 @@ Munch is a mobile Android application that allows users to input various ingredi
 
 ### 2. Screen Archetypes
 
-- [list first screen here]
-  - [list associated required story here]
-  - ...
-- [list second screen here]
-  - [list associated required story here]
-  - ...
+- Recipe Search Bar
+  - Enter ingredients in search bar
+  - Perform search to find list of recipes with the ingredients
+  - Scroll through list of recipes and choose recipes to view in detail or save
+- Login Screen
+  - Allow user to enter username and password
+  - Allow user to create an account for first time use
+  - Authenticate user and load data associated with that user's account in various feeds
+- Recipe Feed Screen
+  - Scrollable list of Saved Recipes
+  - Allow User to access details about recipes
+  - Allow User to removed saved recipes from list
+  - Allow User to rate recipes in the list
+- Social Feed Screen
+  - Scrollable list of posted pictures of recipes
+  - Allow users to post pictures of recipes they attempted
+  - Allow users to see others posts
+- Recipe Detail Screen
+  - Detail Screen containing recipe title, ingredients, instructions and images
+  - Allow user to view step by step instructions to make recipe
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-- [fill out your first tab]
-- [fill out your second tab]
-- [fill out your third tab]
+- Recipe Search
+- Recipe Feed
+- Social Feed
 
 **Flow Navigation** (Screen to Screen)
 
-- [list first screen here]
-  - [list screen navigation here]
-  - ...
-- [list second screen here]
-  - [list screen navigation here]
-  - ...
+- Login Screen
+  - User logs in or signs up to navigate to other screens
+- Recipe Search Screen
+  - Searched recipes can be clicked to navigate to Detail Screen
+  - Nav tab to navigate to Recipe Feed Screen
+  - Nav tab to navigate to Social Feed Screen
+- Recipe Feed Screen
+  - Searched recipes can be clicked to navigate to Detail Screen
+  - Nav tab to navigate to Recipe Feed Screen
+  - Nav tab to navigate to Social Feed Screen
+- Social Feed Screen
+  - Nav tab to navigate to Recipe Feed Screen
+  - Nav tab to navigate to Social Feed Screen
+- Recipe Detail Screen
+  - If accessed from Recipe Search Screen, back button navigates back to Recipe Search Screen
+  - If accessed from Recipe Feed Screen, back button navigates back to Recipe Feed Screen
 
 ## Wireframes
 
