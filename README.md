@@ -30,7 +30,7 @@ Munch is a mobile Android application that allows users to input various ingredi
 
 **Required Features**
 
-- Search bar that allows users to input various ingredients and search for matching recipes online
+- Search bar that allows users to input various ingredients and search for matching recipes online **Half done, search function to fully work in future milestone**
 - Recipe display page that shows the recipe title, ingredients, cooking instructions, and images
 - Save recipe function that allows users to save favorite recipes for later use
 - User account system that allows users to save preferences and access saved recipes across devices
