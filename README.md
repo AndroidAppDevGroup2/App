@@ -105,3 +105,6 @@ Munch is a mobile Android application that allows users to input various ingredi
 ## Progress GIFs
 <img src='https://i.imgur.com/V0qYo6J.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 This gif is to show that the recipe search bar layout has been made, some functionality is missing but the task to create the layout for Milestone 1 has been completed. A Recyclerview is also in this layout but is not being properly populated yet as the recycler adapter has not been implemented yet.
+
+![Sprint1](https://user-images.githubusercontent.com/56842734/229668604-f6cff429-4b19-4879-9f81-1540100242f6.gif)
+This gif is to show the recipe recycler view layouts that will populated with the saved recipe screen, inside the recycler view their will be the recipe name, photo, and rating. A removal button is also in place. Functionality of these layouts will be done in the sprints to come.
