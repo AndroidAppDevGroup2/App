@@ -5,6 +5,7 @@
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
+1. [Progress GIFs](#Progress-GIFs)
 
 ## Overview
 
@@ -101,6 +102,6 @@ Munch is a mobile Android application that allows users to input various ingredi
 <img width="533" alt="Screenshot 2023-03-23 at 5 16 12 PM" src="https://user-images.githubusercontent.com/26809090/227365279-d9d75663-0cb1-4c4c-b593-16d58a6d8dca.png">
 
 
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
+## Progress GIFs
+<img src='https://i.imgur.com/V0qYo6J.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+This gif is to show that the recipe search bar layout has been made, some functionality is missing but the task to create the layout for Milestone 1 has been completed. A Recyclerview is also in this layout but is not being properly populated yet as the recycler adapter has not been implemented yet.
