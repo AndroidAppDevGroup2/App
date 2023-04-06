@@ -1,0 +1,49 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:id="@+id/senderTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Recipe Name Goes Here" />
+
+    <TextView
+        android:id="@+id/titleTv"
+        android:textColor="@color/purple_500"
+        android:textStyle="italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/senderTv"
+        tools:text="Picture will populate this area" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="312dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/summaryTv"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:lines="1"
+        android:ellipsize="end"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTv"
+        tools:text="Rating System will be put here" />
+</androidx.constraintlayout.widget.ConstraintLayout>
