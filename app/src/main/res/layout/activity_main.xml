@@ -11,7 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Hello World!"
+        android:text="Munch Recipe Finder"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/searchBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -44,9 +44,9 @@ class RecipeAdapter (private val recipes: List<Recipe>) : RecyclerView.Adapter<R
             // Get the data model based on position
             val recipe = recipes.get(position)
             // Set item views based on views and data model
-            holder.ingredientsTextView.text = recipe.ingredients
+            holder.ingredientsTextView.text = recipe.ingredients.toString()
             holder.titleTextView.text = recipe.title
-            holder.photoTextView.text = recipe.photo
+            holder.photoTextView.text = recipe.image
         }
 
     }
