@@ -118,6 +118,6 @@ This gif contains the data model files that are going to be used to access the J
 
 
 <img src='https://i.imgur.com/nFpodSa.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-Milestone 3
+Milestone 3\n
 This is the gif of the current progress for Milestone 3. Currently JSON data is being retrieved from the spoonacular API once users input a list of ingredients into the search bar and then hit search. Using the spoonacular API it finds recipes the contain some if not all of the ingredients users enter into the search bar. Save functionality and populating the user's recipe feed are not complete and will require database read and writes that are not fully functional yet.
 
