@@ -4,16 +4,16 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/search_icon"
-        android:title="@string/title_search" />
+        android:title="Search" />
 
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/feed_icon"
-        android:title="@string/title_feed" />
+        android:title="Feed" />
 
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/add_circle_icon"
-        android:title="@string/title_post" />
+        android:title="Post" />
 
 </menu>

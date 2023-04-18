@@ -5,10 +5,37 @@
     android:layout_height="match_parent"
     tools:context=".ui.SearchFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Munch Recipe Finder"
+        android:textSize="30sp"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:id="@+id/searchBar"
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:hint="Enter Ingredients Separated by Commas"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:text="Search"
+        android:layout_gravity="center_horizontal" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="465dp"
+        android:layout_gravity="bottom"
+        tools:listitem="@layout/recipe_list_item" />
 
 </FrameLayout>

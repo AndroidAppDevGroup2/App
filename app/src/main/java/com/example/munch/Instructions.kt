@@ -1,21 +1,10 @@
 package com.example.munch
 
-import androidx.annotation.Keep
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Keep
-@Serializable
-data class InstructionResponse(
-    @SerialName("")
-    val instructions: List<Instructions>?
-)
-
-@Keep
-@Serializable
-data class Instructions(
-    @SerialName("number")
+class Instructions(
+    @SerializedName("number")
     val number: Int,
-    @SerialName("step")
+    @SerializedName("step")
     val step: String
 )
