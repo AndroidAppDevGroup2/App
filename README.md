@@ -30,11 +30,11 @@ Munch is a mobile Android application that allows users to input various ingredi
 
 **Required Features**
 
-- Search bar that allows users to input various ingredients and search for matching recipes online (**Half done, search function to fully work in future milestone**)
+- [x] Search bar that allows users to input various ingredients and search for matching recipes online 
 - Recipe display page that shows the recipe title, ingredients, cooking instructions, and images
 - Save recipe function that allows users to save favorite recipes for later use
 - User account system that allows users to save preferences and access saved recipes across devices
-- Integration with third-party recipe APIs or development of proprietary algorithms for recipe matching
+- [x] Integration with third-party recipe APIs or development of proprietary algorithms for recipe matching
 - Responsive and user-friendly UI that is optimized for mobile devices
 - Take and save pictures of user's attempt at the recipes
 - Post pictures to a social feed
@@ -113,4 +113,8 @@ This gif is to show the recipe recycler view layouts that will populated with th
 Milestone 2
 <img src='https://i.imgur.com/HaYKQCz.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 This gif contains the data model files that are going to be used to access the JSON data returned from the API calls necessary for our different features. The first is for our Recipe Search function and contains data classes to model the return structure of the JSON. The second contains the data classes for the Recipe Instructions which will be used on the detailed view of the saved recipes and will contain instructions to actually create the desired recipe the user has selected.
+
+Milestone 3
+<img src='https://i.imgur.com/nFpodSa.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+This is the gif of the current progress for Milestone 3. Currently JSON data is being retrieved from the spoonacular API once users input a list of ingredients into the search bar and then hit search. Using the spoonacular API it finds recipes the contain some if not all of the ingredients users enter into the search bar. Save functionality and populating the user's recipe feed are not complete and will require database read and writes that are not fully functional yet.
 
