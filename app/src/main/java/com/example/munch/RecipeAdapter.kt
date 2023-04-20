@@ -1,5 +1,4 @@
-
-package com.codepath.articlesearch
+package com.example.munch
 
 import android.content.Context
 import android.content.Intent
@@ -10,13 +9,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.munch.DetailActivity
-import com.example.munch.R
 
-const val ARTICLE_EXTRA = "ARTICLE_EXTRA"
+const val RECIPE_EXTRA = "RECIPE_EXTRA"
 private const val TAG = "RecipeAdapter"
 
-class RecipeAdapter(private val context: Context, private val articles: List<DisplayArticle>) :
+class RecipeAdapter(private val context: Context, private val recipes: List<Recipe>) :
     RecyclerView.Adapter<RecipeAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -25,11 +22,11 @@ class RecipeAdapter(private val context: Context, private val articles: List<Dis
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val article = articles[position]
-        holder.bind(article)
+        val recipe = recipes[position]
+        holder.bind(recipe)
     }
 
-    override fun getItemCount() = articles.size
+    override fun getItemCount() = recipes.size
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
         View.OnClickListener {
@@ -43,23 +40,24 @@ class RecipeAdapter(private val context: Context, private val articles: List<Dis
         init {
             itemView.setOnClickListener(this)
         }
-
-        override fun onClick(v: View?) {
-            val article = articles[absoluteAdapterPosition]
-            val intent = Intent(context, DetailActivity::class.java)
-            intent.putExtra(ARTICLE_EXTRA, article)
-            context.startActivity(intent)
-        }
-
-        fun bind(article: DisplayArticle) {
-            titleTextView.text = article.headline
-            ingredientsTextView.text = article.abstract
-            instructionsTextView.text = article.abstract
+        fun bind(recipe: Recipe) {
+            titleTextView.text = recipe.title
+            ingredientsTextView.text = recipe.ingredients.toString()
+            //instructionsTextView.text = recipe.abstract
 
 
             Glide.with(context)
-                .load(article.mediaImageUrl)
+                .load(recipe.image)
                 .into(recipeImageView)
         }
+        
+        override fun onClick(v: View?) {
+            val recipe = recipes[absoluteAdapterPosition]
+            val intent = Intent(context, DetailActivity::class.java)
+            //intent.putExtra(RECIPE_EXTRA, recipe)
+            context.startActivity(intent)
+        }
+
+
     }
 }

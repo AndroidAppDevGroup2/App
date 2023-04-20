@@ -5,13 +5,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.codepath.articlesearch.ARTICLE_EXTRA
 
 class DetailActivity : AppCompatActivity() {
-    private lateinit var mediaImageView: ImageView
+    private lateinit var recipeImageView: ImageView
     private lateinit var titleTextView: TextView
-    private lateinit var bylineTextView: TextView
-    private lateinit var abstractTextView: TextView
+    private lateinit var instructionsTextView: TextView
+    private lateinit var ingredientsTextView: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,19 +18,19 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.detail_screen)
 
 
-        mediaImageView = findViewById(R.id.recipeImage)
+        recipeImageView = findViewById(R.id.recipeImage)
         titleTextView = findViewById(R.id.title)
-        bylineTextView = findViewById(R.id.ingredients)
-        abstractTextView = findViewById(R.id.instructions)
+        instructionsTextView = findViewById(R.id.ingredients)
+        ingredientsTextView = findViewById(R.id.instructions)
 
-        val article = intent.getSerializableExtra(ARTICLE_EXTRA) as Recipe
+        val recipe = intent.getSerializableExtra(RECIPE_EXTRA) as Recipe
 
-//        titleTextView.text = article.Ingredient?.name
-//        bylineTextView.text = article.Recipe?.original
-//        abstractTextView.text = article.abstract
-//
-//        Glide.with(this)
-//            .load(article.mediaImageUrl)
-//            .into(mediaImageView)
+        titleTextView.text = recipe.title
+        ingredientsTextView.text = recipe.ingredients.toString()
+        //ingredientsTextView.text = recipe.abstract
+
+        Glide.with(this)
+            .load(recipe.image)
+            .into(recipeImageView)
     }
 }
