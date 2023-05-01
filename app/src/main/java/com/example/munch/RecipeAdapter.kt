@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-const val RECIPE_EXTRA = "RECIPE_EXTRA"
+//const val RECIPE_EXTRA = "RECIPE_EXTRA"
 private const val TAG = "RecipeAdapter"
 
 class RecipeAdapter(private val context: Context, private val recipes: List<Recipe>) :
@@ -52,10 +52,10 @@ class RecipeAdapter(private val context: Context, private val recipes: List<Reci
         }
         
         override fun onClick(v: View?) {
-            val recipe = recipes[absoluteAdapterPosition]
-            val intent = Intent(context, DetailActivity::class.java)
+            //val recipe = recipes[absoluteAdapterPosition]
+            //val intent = Intent(context, DetailActivity::class.java)
             //intent.putExtra(RECIPE_EXTRA, recipe)
-            context.startActivity(intent)
+            //context.startActivity(intent)
         }
 
 
