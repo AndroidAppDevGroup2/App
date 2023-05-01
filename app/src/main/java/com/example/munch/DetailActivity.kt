@@ -5,6 +5,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+
+
+
 
 private const val TAG = "DetailActivity"
 class DetailActivity : AppCompatActivity() {
@@ -32,6 +36,7 @@ class DetailActivity : AppCompatActivity() {
 
         Glide.with(this)
             .load(recipe.image)
+            .apply(RequestOptions().override(1200, 400))
             .into(recipeImageView)
     }
 }
