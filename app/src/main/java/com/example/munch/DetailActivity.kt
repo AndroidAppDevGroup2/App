@@ -25,13 +25,19 @@ class DetailActivity : AppCompatActivity() {
 
         recipeImageView = findViewById(R.id.recipeImage)
         titleTextView = findViewById(R.id.title)
-        instructionsTextView = findViewById(R.id.ingredients)
-        ingredientsTextView = findViewById(R.id.instructions)
+        instructionsTextView = findViewById(R.id.instructions)
+        ingredientsTextView = findViewById(R.id.ingredients)
 
         val recipe = intent.getSerializableExtra(RECIPE_EXTRA) as Recipe
-
         titleTextView.text = recipe.title
-        ingredientsTextView.text = recipe.ingredients.toString()
+
+        var LOI=recipe.ingredients.joinToString(separator = "\n")+"\n"+ recipe.ingredients2.joinToString(separator = "\n")
+        LOI=LOI.replace("Ingredient(name=","")
+        LOI=LOI.replace(")","")
+        LOI=LOI.replace("(","")
+        println(LOI)
+        ingredientsTextView.text = LOI
+
         //ingredientsTextView.text = recipe.abstract
 
         Glide.with(this)

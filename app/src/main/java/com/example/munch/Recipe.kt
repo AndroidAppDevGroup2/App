@@ -13,11 +13,13 @@ data class Recipe(
     val image: String,
     @SerializedName("title")
     val title: String,
+    @SerializedName("missedIngredients")
+    val ingredients: List<Ingredient>,
     @SerializedName("usedIngredients")
-    val ingredients: List<Ingredient>
+    val ingredients2: List<Ingredient>,
 )  : java.io.Serializable
-
+@Serializable
 data class Ingredient(
-    @SerializedName("name")
-    val name: String
+    @SerializedName("original")
+    val name: String,
 ) : java.io.Serializable
