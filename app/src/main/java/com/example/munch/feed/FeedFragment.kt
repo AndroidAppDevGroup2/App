@@ -46,6 +46,7 @@ class FeedFragment : Fragment() {
                         postList.add(post)
                     }
                 }
+                postList.reverse()
                 postAdapter.notifyDataSetChanged()
             }
 
