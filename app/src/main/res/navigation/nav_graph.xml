@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/feedFragment"
-        android:name="com.example.munch.ui.FeedFragment"
+        android:name="com.example.munch.feed.FeedFragment"
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed" />
     <fragment
