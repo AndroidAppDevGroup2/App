@@ -41,7 +41,7 @@ class DetailActivity : AppCompatActivity() {
         ingredientsTextView = findViewById(R.id.ingredients)
         val ret=findViewById<Button>(R.id.button)
         ret.setOnClickListener {
-            finish()
+            finish()//
         }
         val recipe = intent.getSerializableExtra(RECIPE_EXTRA) as Recipe
         val id=recipe.id
