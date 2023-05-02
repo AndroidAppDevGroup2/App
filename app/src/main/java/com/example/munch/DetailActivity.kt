@@ -43,8 +43,11 @@ class DetailActivity : AppCompatActivity() {
         titleTextView = findViewById(R.id.title)
         instructionsTextView = findViewById(R.id.instructions)
         ingredientsTextView = findViewById(R.id.ingredients)
+
         saveButton = findViewById(R.id.button)
         dbRef = FirebaseDatabase.getInstance().getReference("Recipes")
+
+
         val recipe = intent.getSerializableExtra(RECIPE_EXTRA) as Recipe
         val id=recipe.id
         print(id)
