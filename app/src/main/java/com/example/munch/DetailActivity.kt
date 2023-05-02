@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.gson.Gson
@@ -29,9 +30,11 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var ingredientsTextView: TextView
     private lateinit var saveButton: Button
     private lateinit var dbRef: DatabaseReference
+    private lateinit var currentUser: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val client = AsyncHttpClient()
+        currentUser = FirebaseAuth.getInstance().getCurrentUser()?.getUid().toString()
 
         // Using the client, perform the HTTP request
 
@@ -45,7 +48,7 @@ class DetailActivity : AppCompatActivity() {
         ingredientsTextView = findViewById(R.id.ingredients)
 
         saveButton = findViewById(R.id.button)
-        dbRef = FirebaseDatabase.getInstance().getReference("Recipes")
+        dbRef = FirebaseDatabase.getInstance().getReference("Recipes/${currentUser}")
 
 
         val recipe = intent.getSerializableExtra(RECIPE_EXTRA) as Recipe
