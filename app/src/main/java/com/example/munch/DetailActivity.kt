@@ -43,8 +43,11 @@ class DetailActivity : AppCompatActivity() {
         titleTextView = findViewById(R.id.title)
         instructionsTextView = findViewById(R.id.instructions)
         ingredientsTextView = findViewById(R.id.ingredients)
+
         saveButton = findViewById(R.id.button)
         dbRef = FirebaseDatabase.getInstance().getReference("Recipes")
+
+
         val recipe = intent.getSerializableExtra(RECIPE_EXTRA) as Recipe
         val id=recipe.id
         print(id)
@@ -68,16 +71,18 @@ class DetailActivity : AppCompatActivity() {
                         Log.v("JSONArray", resultsJSON.toString())
                         val recipesRawJSON : String = resultsJSON.toString()
                         val gson = Gson()
-                        val arrayTutorialType = object : TypeToken<List<Instructions>>() {}.type
-                        val models : List<Instructions> = gson.fromJson(recipesRawJSON, arrayTutorialType)
+                        val arrayTutorialType = object : TypeToken<List<Steps>>() {}.type
+                        val models : List<Steps> = gson.fromJson(recipesRawJSON, arrayTutorialType)
                         if (models.isEmpty()){
                             instructionsTextView.text="no instructions found :("
                         }
                         else {
-                            var instructions=""
-                            for (each in models){
-                                instructions=each.number.toString()+" "+each.step
-                            }
+                            var instructions=models.joinToString(separator = "\n")
+                            instructions=instructions.replace("Steps(instructions=[Instructions(number=","")
+                            instructions=instructions.replace("Instructions(number=","\n")
+                            instructions=instructions.replace("step=","")
+                            instructions=instructions.replace(")","")
+                            instructions=instructions.replace("]","")
                             instructionsTextView.text = instructions
                         }
                         // Look for this in Logcat:
