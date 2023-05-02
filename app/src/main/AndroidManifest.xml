@@ -23,6 +23,8 @@
 
         <activity android:name=".DetailActivity"
             android:exported="true" />
+        <activity android:name=".saved.SavedDetailActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

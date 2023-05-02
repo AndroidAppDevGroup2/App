@@ -9,8 +9,10 @@ import android.widget.TextView
 import com.example.munch.R
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.munch.Ingredient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.example.munch.Recipe
 
 class SavedFragment : Fragment() {
 
@@ -29,7 +31,7 @@ class SavedFragment : Fragment() {
         noSavedText = view.findViewById(R.id.no_saved_text)
 
         recyclerView.layoutManager = LinearLayoutManager(context)
-        savedRecipeAdapter = SavedRecipeAdapter(recipeList)
+        savedRecipeAdapter = SavedRecipeAdapter(view.context, recipeList)
         recyclerView.adapter = savedRecipeAdapter
 
         val userId = FirebaseAuth.getInstance().currentUser?.uid
@@ -52,25 +54,28 @@ class SavedFragment : Fragment() {
                     val id = recipeSnapshot.child("id").getValue(String::class.java)
                     val title = recipeSnapshot.child("title").getValue(String::class.java)
                     val image = recipeSnapshot.child("image").getValue(String::class.java)
+                    val instructions = recipeSnapshot.child("instructions")
 
-                    val ingredients = mutableListOf<String>()
+                    val ingredients = mutableListOf<Ingredient>()
                     for (ingredientSnapshot in recipeSnapshot.child("ingredients").children) {
                         val ingredientName = ingredientSnapshot.child("name").getValue(String::class.java)
                         if (ingredientName != null) {
-                            ingredients.add(ingredientName)
+                            val ingredient = Ingredient(ingredientName)
+                            ingredients.add(ingredient)
                         }
                     }
 
-                    val ingredients2 = mutableListOf<String>()
+                    val ingredients2 = mutableListOf<Ingredient>()
                     for (ingredientSnapshot in recipeSnapshot.child("ingredients2").children) {
                         val ingredientName = ingredientSnapshot.child("name").getValue(String::class.java)
                         if (ingredientName != null) {
-                            ingredients2.add(ingredientName)
+                            val ingredient2 = Ingredient(ingredientName)
+                            ingredients2.add(ingredient2)
                         }
                     }
 
                     if (id != null && title != null && image != null) {
-                        val recipe = Recipe(id, title, image, ingredients, ingredients2)
+                        val recipe = Recipe(id, image, title, ingredients.toList(), ingredients2.toList())
                         recipeList.add(recipe)
                     }
                 }
