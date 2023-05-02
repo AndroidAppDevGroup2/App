@@ -30,7 +30,9 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var ingredientsTextView: TextView
     private lateinit var saveButton: Button
     private lateinit var dbRef: DatabaseReference
+    private lateinit var dbRef2: DatabaseReference
     private lateinit var currentUser: String
+    private lateinit var instructionsList: List<Steps>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val client = AsyncHttpClient()
@@ -49,6 +51,7 @@ class DetailActivity : AppCompatActivity() {
 
         saveButton = findViewById(R.id.button)
         dbRef = FirebaseDatabase.getInstance().getReference("Recipes/${currentUser}")
+        dbRef2 = FirebaseDatabase.getInstance().getReference("Instructions/${currentUser}")
 
 
         val recipe = intent.getSerializableExtra(RECIPE_EXTRA) as Recipe
@@ -76,6 +79,7 @@ class DetailActivity : AppCompatActivity() {
                         val gson = Gson()
                         val arrayTutorialType = object : TypeToken<List<Steps>>() {}.type
                         val models : List<Steps> = gson.fromJson(recipesRawJSON, arrayTutorialType)
+                        instructionsList = models
                         if (models.isEmpty()){
                             instructionsTextView.text="no instructions found :("
                         }
@@ -132,6 +136,7 @@ class DetailActivity : AppCompatActivity() {
             saveRecipeData(recipe)
         }
 
+
     }
 
     private fun saveRecipeData(recipe: Recipe){
@@ -142,5 +147,21 @@ class DetailActivity : AppCompatActivity() {
             }.addOnFailureListener { err ->
                 Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_SHORT).show()
             }
+        if(instructionsList.isNotEmpty()) {
+            dbRef2.child(recipeId).setValue(instructionsList)
+                .addOnCompleteListener {
+                    Toast.makeText(this, "Recipe Saved Successfully", Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener { err ->
+                    Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_SHORT).show()
+                }
+        }
+        else{
+            dbRef2.child(recipeId).setValue("no instructions found :(")
+                .addOnCompleteListener {
+                    Toast.makeText(this, "Recipe Saved Successfully", Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener { err ->
+                    Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_SHORT).show()
+                }
+        }
     }
 }
