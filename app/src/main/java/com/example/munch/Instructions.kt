@@ -6,6 +6,11 @@ import kotlinx.serialization.Serializable
 
 @Keep
 @Serializable
+data class Steps(
+    @SerializedName("steps")
+    val instructions: List<Instructions>
+) : java.io.Serializable
+@Serializable
 data class Instructions(
     @SerializedName("number")
     val number: Int,
