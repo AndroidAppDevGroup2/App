@@ -20,4 +20,9 @@
         android:name="com.example.munch.post.PostFragment"
         android:label="fragment_post"
         tools:layout="@layout/fragment_post" />
+    <fragment
+        android:id="@+id/savedFragment"
+        android:name="com.example.munch.saved.SavedFragment"
+        android:label="fragment_saved"
+        tools:layout="@layout/fragment_saved" />
 </navigation>

@@ -34,7 +34,7 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val client = AsyncHttpClient()
-        currentUser = FirebaseAuth.getInstance().getCurrentUser()?.getUid().toString()
+        currentUser = FirebaseAuth.getInstance().currentUser?.uid.toString()
 
         // Using the client, perform the HTTP request
 
