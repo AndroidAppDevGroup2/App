@@ -32,7 +32,6 @@ class SearchAdapter(private val context: Context, private val recipes: List<Reci
 
         private val recipeTitle: TextView = itemView.findViewById(R.id.recipeTitleTextView)
         private val recipeImage: ImageView = itemView.findViewById(R.id.recipeMainImageView)
-        private val saveButton: Button = itemView.findViewById(R.id.saveRecipeButton)
 
         init {
             itemView.setOnClickListener(this)
