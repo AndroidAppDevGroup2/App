@@ -129,3 +129,7 @@ This gif shows the progress of Milestone 4. Currently 5 screens are working with
 
 Milestone 5
 This gif shows our current project status. We implemented a working sign-in using email/password and Firebase Authentication. Users have the option to create an account and sign in to an existing account. After logging in, users are directed to our search screen where they can type a list of ingredients they would like to search a recipe for in a comma separated list. A user can then click on an item in the list of recipe results and view the corresponding ingredients list, steps, as well as an image of the recipe. A user can also save a recipe to their account which we store in a Realtime Database on Firebase. The second tab following the search tab on the bottom navbar shows a list of public posts with title and image. The third tab allows users to create a new post with a custom title and camera picture. Their post will then be posted publicly on the posts tab. The fourth and final navbar tab allows users to view the saved recipes on their account. You can also click on one of the saved recipe items to view its ingredients list and steps.
+
+---
+# FINAL DEMO
+https://user-images.githubusercontent.com/26809090/236675490-818c62ef-6bd7-4bf9-9d4d-74539ff05156.mp4
